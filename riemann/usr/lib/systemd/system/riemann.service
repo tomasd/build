@@ -1,0 +1,17 @@
+[Unit]
+Description=riemann
+After=network.target
+
+[Service]
+Type=simple
+RemainAfterExit=no
+WorkingDirectory=/var/lib/riemann
+User=riemann
+Group=riemann
+Environment="RIEMANN_CONFIG=/etc/riemann/riemann.config"
+EnvironmentFile=/etc/sysconfig/riemann
+
+ExecStart=/usr/lib/riemann/bin/riemann ${RIEMANN_CONFIG}
+
+[Install]
+WantedBy=multi-user.target
