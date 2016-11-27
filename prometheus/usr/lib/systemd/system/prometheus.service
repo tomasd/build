@@ -9,7 +9,7 @@ User=prometheus
 Group=prometheus
 Environment="PROMETHEUS_CONFIG_FILE=/etc/prometheus/prometheus.yaml"
 Environment="PROMETHEUS_LOG_LEVEL=info"
-Environment="PROMETHEUS_WEB_LISTEN_ADDRESS=:9090"
+Environment="PROMETHEUS_WEB_LISTEN_ADDRESS=127.0.0.1:9090"
 Environment="PROMETHEUS_WORKING_DIRECTORY=/var/lib/prometheus/data"
 
 
