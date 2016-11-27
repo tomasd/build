@@ -15,4 +15,8 @@ rpm: extract
 
 clean:
 	rm -f *.rpm
+
+vagrant:
+	vagrant init centos/7
+
 all: download extract rpm
