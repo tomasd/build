@@ -10,6 +10,7 @@ rpm: extract
 	--config-files /etc/riemann/riemann.config \
 	--config-files /etc/sysconfig/riemann \
 	--before-install rpm/before_install.sh \
+	--after-install rpm/after_install.sh \
 	--after-remove rpm/after_remove.sh \
 	target/riemann-0.2.11=/usr/lib \
 	etc=/ \
@@ -17,4 +18,8 @@ rpm: extract
 
 clean:
 	rm -f *.rpm
+
+vagrant:
+	vagrant init centos/7
+
 all: download extract rpm
