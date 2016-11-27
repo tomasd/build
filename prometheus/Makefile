@@ -19,4 +19,8 @@ clean:
 vagrant:
 	vagrant init centos/7
 
+deploy:
+	scp *.rpm root@repo.drencak.com:/repos/CentOS/ && \
+	ssh root@repo.drencak.com createrepo --update /repos/CentOS/
+
 all: download extract rpm
